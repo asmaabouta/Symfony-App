@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Departement{% endblock %}
+
+{% block body %}
+    <h1>Edit Departement</h1>
+
+    {{ include('departement/_form.html.twig', {'button_label': 'Update'}) }}
+    <form action="{{ path('departement_index') }}">
+        <input type="submit" class="btn btn-primary" value="Revenir A La Liste" style="width:15%;background-color:darkred;font-size: large"/>
+    </form>
+
+
+    {{ include('departement/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Departement index{% endblock %}
+
+{% block body %}
+    <h1 style="color: darkred ; font-family: Algerian ; text-align: center" >La liste des Département :</h1>
+
+    <table class="table" border="1">
+        <thead>
+            <tr class="table-primary">
+                <th  scope="row">ID</th>
+                <th>NOM_DEPARTEMENT</th>
+                <th>LIENS</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for departement in departements %}
+            <tr>
+                <td>{{ departement.id }}</td>
+                <td>{{ departement.NomDepartement }}</td>
+                <td>
+                    <form action="{{ path('departement_show', {'id': departement.id}) }}">
+                        <input type="submit" class="btn btn-primary" value="Afficher" style="width:30%;background-color:#2C3E50" />
+                    </form><form action="{{ path('departement_edit', {'id': departement.id}) }}">
+                        <input type="submit" class="btn btn-primary" value="Modifier" style="width:30%;background-color: darkred"/>
+                    </form>
+
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <form action="{{ path('departement_new') }}">
+        <input type="submit" class="btn btn-primary" value="Create New" style="width:30%;background-color: darkred"/>
+    </form>
+
+{% endblock %}

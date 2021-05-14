@@ -1,0 +1,94 @@
+{{ form_start(form,{"class":"example-wrapper"}) }}
+
+    <fieldset>
+        <table width="40%">
+<tr>
+    <td>Nom </td>
+    <td>
+        <label>{{ form_widget(form.Nom, {'id':"inputDefault",'attr': {'class': 'form-control'}}) }}</label>
+    </td>
+    </div>
+</tr>
+<tr>
+    <td>Prenom </td>
+    <td>
+        <label for="exampleTextarea">
+            {{ form_widget(form.Prenom, {'id':"inputDefault",'attr': {'class': 'form-control'}}) }}
+        </label>
+    </td>
+
+</tr>
+<tr>
+    <td>Cin</td>
+    <td>
+        <label for="exampleTextarea">
+            {{ form_widget(form.Cin, {'id':"inputDefault",'attr': {'class': 'form-control'}}) }}
+        </label>
+    </td>
+</tr>
+
+<tr>
+    <td>Adresse</td>
+    <td>
+        <label for="exampleTextarea">
+            {{ form_widget(form.Adresse, {'id':"inputDefault",'attr': {'class': 'form-control'}}) }}
+        </label>
+    </td>
+</tr>
+
+
+<tr>
+    <td>Telephone </td>
+    <td>
+        <label for="exampleTextarea">
+            {{ form_widget(form.Telephone, {'id':"inputDefault",'attr': {'class': 'form-control'}}) }}
+        </label>
+    </td>
+</tr>
+
+
+<tr>
+    <td>Email </td>
+    <td>
+        <label for="exampleInputEmail1">
+            {{ form_widget(form.Email, {'id':"exampleInputEmail1",'attr': {'class': 'form-control'}}) }}
+        </label>
+    </td>
+</tr>
+
+
+<tr>
+    <td>Date_Recrutement </td>
+    <td>
+        <label for="exampleTextarea">
+            {{ form_widget(form.Date_Recrutement) }}
+        </label>
+    </td>
+</tr>
+
+<tr>
+    <td>Departement</td>
+    <td>
+        <label for="exampleSelect1">
+            {{ form_widget(form.Departement, {'id':"exampleSelect1",'attr': {'class': 'form-control'}}) }}
+        </label>
+    </td>
+</tr>
+
+
+<tr>
+    <td>Cours</td>
+    <td>
+        <label for="exampleSelect2">
+            {{ form_widget(form.Cours, {'id':"exampleSelect2",'attr': {'class': 'form-control'}}) }}
+        </label>
+    </td>
+</tr>
+
+        </table>
+        <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+    </fieldset>
+
+{{ form_end(form) }}
+
+

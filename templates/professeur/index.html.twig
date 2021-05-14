@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Professeur index{% endblock %}
+
+{% block body %}
+    <h1 style="font-family: Algerian ; text-align: center ;color: darkred"> La Liste des Professeurs </h1><br>
+
+    <table class="table" border="1">
+        <thead>
+            <tr class="table-primary">
+                <th style="font-family: Cambria"  >ID</th>
+                <th style="font-family: Cambria">NOM</th>
+                <th style="font-family: Cambria">PRENOM</th>
+                <th style="font-family: Cambria">CIN</th>
+                <th style="font-family: Cambria">ADRESSE</th>
+                <th style="font-family: Cambria">TELEPHONE</th>
+                <th style="font-family: Cambria">EMAIL</th>
+                <th style="font-family: Cambria">DATE_RECRUTEMENT</th>
+                <th style="font-family: Cambria">ACTIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for professeur in professeurs %}
+            <tr >
+                <td >{{ professeur.id }}</td>
+                <td >{{ professeur.Nom }}</td>
+                <td >{{ professeur.Prenom }}</td>
+                <td >{{ professeur.Cin }}</td>
+                <td >{{ professeur.Adresse }}</td>
+                <td >{{ professeur.Telephone }}</td>
+                <td >{{ professeur.Email }}</td>
+                <td >{{ professeur.DateRecrutement ? professeur.DateRecrutement|date('Y-m-d H:i:s') : '' }}</td>
+                <td >
+                    <form action="{{ path('professeur_show', {'id': professeur.id}) }}">
+                        <input type="submit" class="btn btn-primary" value="Afficher" style="width:70%;background-color:darkred;font-size: large" />
+                    </form>
+                    <form action="{{ path('professeur_edit', {'id': professeur.id}) }}">
+                        <input type="submit" class="btn btn-primary" value="Modifier" style="width:70%;font-size: large;background-color: #1e2b37"/>
+                    </form>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <form action="{{ path('professeur_new') }}">
+        <input type="submit" class="btn btn-primary" value="Ajouter un Nouveau" style="width:30%;font-size: large;background-color: darkred"/>
+    </form>
+    <br>
+
+
+{% endblock %}

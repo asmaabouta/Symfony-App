@@ -1,0 +1,17 @@
+{{ form_start(form,{"class":"example-wrapper"}) }}
+    <fieldset>
+        <table width="40%">
+            <tr>
+                <td>Nom_Departement </td>
+                <td>
+                    <label>{{ form_widget(form.Nom_Departement, {'id':"inputDefault",'attr': {'class': 'form-control'}}) }}</label>
+                </td>
+                </div>
+            </tr>
+        </table>
+        <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+    </fieldset>
+{{ form_end(form) }}
+
+
+

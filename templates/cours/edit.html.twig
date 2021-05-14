@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Cours{% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center;color: darkred;font-family: Algerian">Modifier Un Cours</h1>
+
+    {{ include('cours/_form.html.twig', {'button_label': 'Update'}) }}<br>
+    <form action="{{ path('cours_index') }}">
+        <input type="submit" class="btn btn-primary" value="Revenir A La Liste" style="width:15%;background-color:darkred;font-size: large"/>
+    </form>
+
+
+    {{ include('cours/_delete_form.html.twig') }}
+{% endblock %}

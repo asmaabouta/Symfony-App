@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Professeur{% endblock %}
+
+{% block body %}
+
+    <h1 style="text-align: center ;font-family: Algerian;color: darkred">Afficher Un Professeur</h1>
+
+    <table class="table" border="1" >
+        <tbody >
+            <tr>
+                <th>ID</th>
+                <td>{{ professeur.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ professeur.Nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ professeur.Prenom }}</td>
+            </tr>
+            <tr>
+                <th>Cin</th>
+                <td>{{ professeur.Cin }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ professeur.Adresse }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ professeur.Telephone }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ professeur.Email }}</td>
+            </tr>
+            <tr>
+                <th>Date_Recrutement</th>
+                <td>{{ professeur.DateRecrutement ? professeur.DateRecrutement|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <form action="{{ path('professeur_index') }}">
+        <input type="submit" class="btn btn-primary" value="Revenir A La Liste" style="width:30%;background-color:Darkred;font-size: large"/>
+    </form>
+    <form action="{{ path('professeur_edit', {'id': professeur.id}) }}">
+        <input type="submit" class="btn btn-primary" value="Modifier" style="width:30%;background-color:#1e2b37;font-size: large"/>
+    </form>
+
+
+    {{ include('professeur/_delete_form.html.twig') }}
+{% endblock %}

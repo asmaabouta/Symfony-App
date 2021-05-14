@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+{% block title %}Page d'acceuil{% endblock %}
+{% block body  %}
+
+
+<div>
+
+        <img src="/css/pic3.PNG" style="width: 100% ; height: 250px ;object-fit:cover"; >
+
+</div>
+    <div style="background-color:darkred;font-size: 250%">
+<marquee>Merci de contacter pour toute demande concernant la démarche des cours Sur les liens en bas :  </marquee>
+    </div>
+<div style="display:inline-flex;margin-left:10px">
+
+    <div class="btn btn-primary">
+        <h3 style="font-family: Algerian"> Links </h3>
+        <span style="font-size:75%">
+        <p>
+        <form action="{{ path("professeur_index")}}">
+            <input type="submit" class="btn btn-primary" value="Aller vers la liste des professeurs" style="background-color: #1a252f;font-size: 150%;color:#dadedf"/>
+        </form>
+        </p>
+
+        <p>
+        <form action="{{ path("cours_index")}}">
+            <input type="submit" class="btn btn-primary" value="Aller vers la liste des cours" style="background-color: darkred;width:97%;font-size: 150%;color:#dadedf"/>
+        </form>
+        </p>
+
+        <p>
+        <form action="{{ path("departement_index")}}">
+            <input type="submit" class="btn btn-primary" value="Aller vers la liste des département" style="background-color: #1a252f;width: 97%;font-size: 150%;color:#dadedf"/>
+        </form>
+        </p>
+        <p>
+        <form action="">
+            <input type="submit" class="btn btn-primary" value="Aller vers google" style="background-color: darkred;width: 97%;font-size: 150%;color:#dadedf"/>
+        </form>
+        </p>
+        <p>
+        <form action="">
+            <input type="submit" class="btn btn-primary" value="Contactez Nous :05 23 48 11 12" style="background-color: #1a252f;width: 97%;font-size: 150%;color:#dadedf"/>
+        </form>
+
+        </p>
+        </span>
+    </div>
+
+    <div class="btn btn-primary" style="background-color:#0f7864" >
+
+        <p>
+            <pre>
+                                         <h1 style="background-color:#1b4f72;font-family: Algerian"> Description :</h1>
+            <span style="font-family:Verdana;font-size:85%">
+            L'École polytechnique, couramment appelée Polytechnique et surnommée en France l'« X »,
+            est l'une des 205 écoles d'ingénieurs françaises  accréditées au 1ere septembre 2019 à
+            délivrer un diplôme d'ingénieur4.
+
+            Elle est fondée en 1794 par la Convention nationale sous le nom d'École centrale des
+            travaux publics et militarisée en 1804 par Napoléon Ier. À l'origine située à Paris,
+            l'école est à Palaiseau (Essonne) depuis 1976, cœur du pôle technologique ParisSaclay.
+            Elle a le statut d'établissement public à caractère scientifique,culturel et profess-
+            -ionnel (EPSCP-GE), constitue une grande école militaire placée sous la tutelle du
+            ministère des Armées et est membre fondateur de l'Institut polytechnique de Paris.
+            Elle est connue :
+            principalement pour sa formation d'ingénieurs, dont les élèves et anciens élèves sont
+            appelés :
+            « polytechniciens ».
+
+
+                </span>
+            </pre>
+        </p>
+
+    </div>
+    <div class="btn btn-primary">
+        <h1 style="font-family: Algerian"> Bienvenue : </h1>
+        <span >
+             <img src="/css/36.PNG" style="width:85%"  ><br><br>
+             <img src="/css/HKJDSK.PNG" style="width:85% ; height: 32%"  >
+        </span>
+    </div>
+</div>
+
+
+    {% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cours index{% endblock %}
+
+{% block body %}
+    <h1 style="color: darkred;font-family: Algerian;text-align: center">La Liste des Cours</h1>
+    <table class="table" border="1" style="border-collapse: collapse">
+        <thead>
+            <tr class="table-primary">
+                <th scope="row">ID</th>
+                <th>INTITULE</th>
+                <th>LIENS</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cour in cours %}
+            <tr >
+                <td>{{ cour.id }}</td>
+                <td>{{ cour.Intitule }}</td>
+                <td style="display: flex">
+                    <form action="{{ path('cours_show', {'id': cour.id}) }}">
+                        <input type="submit" class="btn btn-primary" value="Afficher" style="width:100%;background-color: darkred;font-size: large"/>
+                    </form>
+                    <form action="{{ path('cours_edit', {'id': cour.id}) }}">
+                        <input type="submit" class="btn btn-primary" value="Modifier" style="width:100%;background-color:#1e2b37;font-size: large"/>
+                    </form>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <form action="{{ path('cours_new') }}">
+        <input type="submit" class="btn btn-primary" value="Create New" style="width:40%;background-color:Darkred;font-size: large"/>
+    </form>
+
+{% endblock %}
